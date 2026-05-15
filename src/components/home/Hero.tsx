@@ -2,8 +2,7 @@
 
 import { motion, useReducedMotion } from 'framer-motion'
 
-const primarySkills = ['AI Agent', 'LLM', 'AI Coding', 'RAG', 'Workflow']
-const secondarySkills = ['Java', 'Spring', 'Next.js', 'MongoDB', 'Tailwind CSS']
+const primarySkills = ['AI Agent', 'LLM', 'Java', 'SpringBoot', 'C++']
 
 export function Hero() {
     const prefersReducedMotion = useReducedMotion()
@@ -17,20 +16,20 @@ export function Hero() {
                 initial={prefersReducedMotion ? false : { opacity: 0, y: -16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: prefersReducedMotion ? 0 : 0.5, ease: 'easeOut' }}
-                className="relative mx-auto max-w-6xl px-4"
+                className="relative mx-auto max-w-6xl px-4 text-center"
             >
                 <h1
                     className="max-w-2xl text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100 md:text-5xl lg:text-6xl"
                     style={{ textWrap: 'balance' }}
                 >
-                    从工程实践到 AI 探索
+                    未来已至，创造不朽
                 </h1>
                 <p className="mt-5 max-w-xl text-lg leading-relaxed text-gray-500 dark:text-gray-400">
-                    15 年工程经验 · AI Agent 深度实践 · BestBlogs 万人订阅
+                    
                 </p>
 
                 {/* 核心技能标签 — 减小间距避免 Workflow 孤行 */}
-                <div className="mt-8 flex flex-wrap gap-1.5">
+                <div className="mt-8 flex flex-wrap gap-1.5 justify-center max-w-lg">
                     {primarySkills.map((skill, i) => (
                         <motion.span
                             key={skill}
@@ -41,18 +40,6 @@ export function Hero() {
                         >
                             {skill}
                         </motion.span>
-                    ))}
-                </div>
-
-                {/* 次要技能标签 */}
-                <div className="mt-2 flex flex-wrap gap-1.5">
-                    {secondarySkills.map((skill) => (
-                        <span
-                            key={skill}
-                            className="inline-flex items-center rounded-md bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-500 dark:bg-gray-800 dark:text-gray-400"
-                        >
-                            {skill}
-                        </span>
                     ))}
                 </div>
             </motion.div>
